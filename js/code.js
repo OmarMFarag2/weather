@@ -1,5 +1,5 @@
 async function getWeather(city) {
-    let req = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=2ac45727c9f745fbbc4205010231108&q=${city}&days=3`);
+    let req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=2ac45727c9f745fbbc4205010231108&q=${city}&days=3`);
     let data = await req.json();
     displayWeather(data);
 }
