@@ -1,7 +1,6 @@
 async function getWeather(city) {
     let req = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=2ac45727c9f745fbbc4205010231108&q=${city}&days=3`);
     let data = await req.json();
-    console.log(data);
     displayWeather(data);
 }
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "october", "November", "December"]
@@ -10,7 +9,6 @@ function displayWeather(data) {
     let date = new Date(data.current.last_updated)
     let day = date.toLocaleDateString("en-US", { weekday: "long" });
     icon = icon.slice(icon.indexOf("64"));
-    console.log(icon);
     let html = `
     <div class="col-md-4 px-0 color1" id="test"> 
     <div class="data  pb-4">
